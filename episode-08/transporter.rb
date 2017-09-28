@@ -1,7 +1,7 @@
 # The Transporter moves the glass around
 # the ship and ingredients into the glass.
 # It requires power to work properly.
-
+require "pry"
 class Transporter
 
   def initialize(enterprise)
@@ -11,13 +11,15 @@ class Transporter
   end
 
   def connect_to_power
+    # binding.pry
     @power = @enterprise.reactor.on
   end
 
   def energize(obj, from, to)
+    # binding.pry
     return unless @power
 
-    if @enterprise.reactor.draw_power(300)
+    if @enterprise.reactor.draw_power(3)
       to.contents << from.contents.delete(obj)
       return obj
     end

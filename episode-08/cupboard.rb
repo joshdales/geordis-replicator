@@ -1,7 +1,7 @@
 # The Cupboard is where empty glasses are stored.
 # When this is instatiated, it should put some empty
 # glasses onto its shelf if it's working properly.
-
+require 'pry'
 class Cupboard
 
   def initialize
@@ -20,6 +20,7 @@ class Cupboard
   end
 
   def find_glass
+    # binding.pry
     @shelf.contents.find do |obj|
       obj.class == Glass
     end
